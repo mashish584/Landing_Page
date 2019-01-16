@@ -1,0 +1,31 @@
+.slick-list .draggable {
+	padding: 25px 0;
+}
+
+.slick-current .card {
+	@include Shadow(0, 8px,25px,0,0.3);
+}
+
+.carousel {
+	&-prev,
+	&-next {
+		background: $themeColor;
+		border: none;
+		padding: 15px;
+		color: $white;
+		position: absolute;
+		z-index: 9999;
+		top: 50%;
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&-prev {
+		left: -25px;
+	}
+
+	&-next {
+		right: -25px;
+	}
+}

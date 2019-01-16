@@ -1,0 +1,10 @@
+.page-nav {
+	@include flexy();
+	width: 100%;
+	max-height: 75px;
+	padding: 15px 25px;
+	align-items: center;
+	@include mod(logo) {
+		@include WH(190px,auto);
+	}
+}

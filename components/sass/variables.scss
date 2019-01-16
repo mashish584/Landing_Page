@@ -1,0 +1,58 @@
+$font-url--google: 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Open+Sans:400,600,700|Roboto:400,500,700';
+$font-url--Fawesome: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+
+$font-family: (
+	one: "'Roboto', sans-serif",
+	two: "'Open Sans', sans-serif",
+	three: "'Lato', sans-serif"
+);
+
+$white: #ffffff;
+$backgroundColor: $white;
+$themeColor: #ff3e3e;
+$cardColor: #e5e5e5;
+$textColor: #928383;
+
+// font sizes
+$headerHeading: 48px;
+$pageDescription: 18px;
+
+//check font-awesome & google font url exist if 'yes' import both of them
+@if variable-exists(font-url--google) {
+	@import url($font-url--google);
+}
+@if variable-exists(font-url--Fawesome) {
+	@import url($font-url--Fawesome);
+}
+
+// mixins
+@mixin flexy($direction:row) {
+	display: flex;
+	flex-direction: $direction;
+}
+
+@mixin WH($w:100%,$h:100%) {
+	width: $w;
+	height: $h;
+}
+
+@mixin mod($element) {
+	&--#{$element} {
+		@content;
+	}
+}
+
+@mixin trans($speed) {
+	transition: $speed ease-in;
+	-webkit-transition: $speed ease-in;
+}
+
+@mixin Shadow($x,$y,$blur,$spread,$opacity) {
+	box-shadow: $x $y $blur $spread rgba(0, 0, 0, $opacity);
+	-webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $opacity);
+}
+
+//flex-basis calculation
+@function flexWidth($count,$margin:0.5%) {
+	@return (100/$count) - ($margin*2);
+}

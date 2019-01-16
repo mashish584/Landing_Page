@@ -1,0 +1,18 @@
+.btn {
+	text-decoration: none;
+	padding: 15px 25px;
+	background: darken($white, 10%);
+	color: darken($white, 100%);
+	font-family: unquote(map-get($font-family, two));
+	border-radius: .25em;
+}
+
+.anchor-btn {
+	background: $themeColor;
+	color: $white;
+	@include Shadow(0,3px,10px,0,0.4);
+	@include trans(100ms);
+	&:hover {
+		@include Shadow(0,5px,15px,0,0.4);
+	}
+}

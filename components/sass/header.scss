@@ -1,0 +1,21 @@
+.page-header {
+	width: 100%;
+	padding: 25px;
+	@include flexy;
+	@include mod (content) {
+		padding: 15px 0;
+		margin-left: 35px;
+		h2 {
+			font-family: unquote(map-get($font-family, one));
+			font-size: $headerHeading;
+		}
+		p {
+			width: 90%;
+			margin: 25px 0 35px;
+			font-family: unquote(map-get($font-family, three));
+			font-weight: 500;
+			color: $textColor;
+			font-size: $pageDescription;
+		}
+	}
+}
